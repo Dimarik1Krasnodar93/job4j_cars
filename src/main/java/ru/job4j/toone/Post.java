@@ -1,4 +1,4 @@
-package model;
+package ru.job4j.toone;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -10,7 +10,7 @@ public class Post {
     private int id;
     private String text;
     private Timestamp timestamp;
-    @ManyToOne
+
     @JoinColumn(name = "auto_user")
     private User user;
 }

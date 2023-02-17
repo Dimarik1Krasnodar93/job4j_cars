@@ -1,9 +1,6 @@
-package model;
+package ru.job4j.toone;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -17,4 +14,6 @@ public class PriceHistory {
     private long after;
     @Column
     private Timestamp created;
+
+
 }
