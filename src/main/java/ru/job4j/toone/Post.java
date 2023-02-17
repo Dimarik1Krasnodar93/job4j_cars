@@ -21,4 +21,8 @@ public class Post {
     @JoinTable(name = "participates",
     joinColumns = {@JoinColumn(name = "post_id")})
     private List<User> userList;
+
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    private PriceHistory priceHistory;
 }

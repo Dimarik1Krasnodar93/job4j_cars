@@ -2,6 +2,7 @@ package ru.job4j.toone;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "PRICE_HISTORY")
@@ -15,5 +16,8 @@ public class PriceHistory {
     @Column
     private Timestamp created;
 
+    @OneToMany
+    @JoinColumn(name = "post_id")
+    private List<Post> posts;
 
 }
