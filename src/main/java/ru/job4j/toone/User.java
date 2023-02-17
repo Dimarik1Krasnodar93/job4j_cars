@@ -16,4 +16,11 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "auto_user")
     private List<Post> posts;
+
+    @ManyToMany
+    @JoinTable(name = "participates",
+            joinColumns = {@JoinColumn(name = "user_id")})
+    private List<User> userList;
+
+
 }

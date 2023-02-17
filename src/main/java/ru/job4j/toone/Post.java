@@ -1,7 +1,10 @@
 package ru.job4j.toone;
 
+import org.hibernate.dialect.PostgreSQL9Dialect;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Table(name = "aoto_post")
 @Entity
@@ -13,4 +16,9 @@ public class Post {
 
     @JoinColumn(name = "auto_user")
     private User user;
+
+    @ManyToMany
+    @JoinTable(name = "participates",
+    joinColumns = {@JoinColumn(name = "post_id")})
+    private List<User> userList;
 }
