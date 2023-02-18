@@ -4,6 +4,7 @@ import org.hibernate.dialect.PostgreSQL9Dialect;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Table(name = "aoto_post")
@@ -20,7 +21,7 @@ public class Post {
     @ManyToMany
     @JoinTable(name = "participates",
     joinColumns = {@JoinColumn(name = "post_id")})
-    private List<User> userList;
+    private List<User> userList = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "post_id")
