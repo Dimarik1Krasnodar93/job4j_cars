@@ -22,7 +22,7 @@ public class Post {
     joinColumns = {@JoinColumn(name = "post_id")})
     private List<User> userList;
 
-    @ManyToOne
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "post_id")
     private PriceHistory priceHistory;
 }

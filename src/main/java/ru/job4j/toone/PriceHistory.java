@@ -16,8 +16,6 @@ public class PriceHistory {
     @Column
     private Timestamp created;
 
-    @OneToMany
-    @JoinColumn(name = "post_id")
-    private List<Post> posts;
+
 
 }
