@@ -1,6 +1,7 @@
 package ru.job4j.toone;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,7 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "auto_user")
-    private List<Post> posts;
+    private List<Post> posts = new ArrayList<>();;
 
     @ManyToMany
     @JoinTable(name = "participates",
