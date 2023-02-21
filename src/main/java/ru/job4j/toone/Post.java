@@ -1,6 +1,7 @@
 package ru.job4j.toone;
 
 import org.hibernate.dialect.PostgreSQL9Dialect;
+import ru.job4j.cars.model.Car;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -12,7 +13,9 @@ import java.util.List;
 public class Post {
     @Id
     private int id;
+    @Column
     private String text;
+    @Column
     private Timestamp timestamp;
 
     @JoinColumn(name = "auto_user")
@@ -26,4 +29,8 @@ public class Post {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "post_id")
     private List<PriceHistory> priceHistoryList = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
 }
