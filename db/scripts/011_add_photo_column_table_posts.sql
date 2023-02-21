@@ -1,0 +1,1 @@
+ALTER TABLE aoto_post ADD COLUMN photo BINARY;
