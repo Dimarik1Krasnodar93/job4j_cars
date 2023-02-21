@@ -1,4 +1,4 @@
 CREATE TABLE engine (
 id SERIAL PRIMARY KEY,
-name TEXT;
+name TEXT
 )

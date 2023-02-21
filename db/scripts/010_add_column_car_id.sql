@@ -1,1 +1,1 @@
-ALTER TABLE aoto_post ADD COLUMN car_id REFERENCES car(id);
+ALTER TABLE aoto_post ADD COLUMN car_id INT REFERENCES car(id);
