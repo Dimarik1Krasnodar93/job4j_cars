@@ -1,5 +1,5 @@
 CREATE TABLE car_driver (
-id INT SERIAL PRIMARY KEY,
-car_id REFERENCES car(id),
-driver_id REFERENCES driver(id)
+id  SERIAL PRIMARY KEY,
+car_id INT REFERENCES car(id),
+driver_id INT REFERENCES driver(id)
 )

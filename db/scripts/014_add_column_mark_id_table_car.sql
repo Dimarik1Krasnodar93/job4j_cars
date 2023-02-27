@@ -1,0 +1,1 @@
+ALTER TABLE car ADD COLUMN mark_id INT REFERENCES marks(id);
