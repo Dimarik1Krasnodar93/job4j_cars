@@ -29,8 +29,7 @@ public class HibernatePostRepository implements PostRepository {
 
     @Override
     public List<Post> getPostsForLastDay() {
-        Timestamp timestamp = Timestamp.valueOf(LocalDateTime.of(LocalDate.now(),
-                LocalTime.of(0, 0)));
+        Timestamp timestamp = Timestamp.valueOf(LocalDate.EPOCH.atStartOfDay());
         Map<String, Object> map = new HashMap<>();
         map.put("dayStart", timestamp);
         return crudRepository.query(FIND_POSTS_LAST_DAY, Post.class, map);

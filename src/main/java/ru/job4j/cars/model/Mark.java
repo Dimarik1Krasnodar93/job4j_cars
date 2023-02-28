@@ -12,5 +12,5 @@ public class Mark {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
-    String name;
+    private String name;
 }
