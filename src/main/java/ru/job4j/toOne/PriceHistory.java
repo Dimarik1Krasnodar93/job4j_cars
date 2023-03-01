@@ -1,8 +1,7 @@
-package ru.job4j.toone;
+package ru.job4j.toOne;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 
 @Entity
 @Table(name = "PRICE_HISTORY")

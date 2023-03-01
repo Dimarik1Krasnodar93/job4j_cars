@@ -1,6 +1,6 @@
-package ru.job4j.toone;
+package ru.job4j.toOne;
 
-import org.hibernate.dialect.PostgreSQL9Dialect;
+import lombok.Data;
 import ru.job4j.cars.model.Car;
 
 import javax.persistence.*;
@@ -10,6 +10,7 @@ import java.util.List;
 
 @Table(name = "aoto_post")
 @Entity
+@Data
 public class Post {
     @Id
     private int id;
@@ -18,7 +19,8 @@ public class Post {
     @Column
     private Timestamp timestamp;
 
-    @JoinColumn(name = "auto_user")
+    @ManyToOne
+    @JoinColumn(name = "auto_user_id")
     private User user;
 
     @ManyToMany

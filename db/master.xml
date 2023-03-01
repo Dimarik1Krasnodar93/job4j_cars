@@ -20,4 +20,10 @@
     <include file="scripts/011_add_photo_column_table_posts.sql" relativeToChangelogFile="true"/>
     <include file="scripts/012_create_table_car_driver.sql" relativeToChangelogFile="true"/>
     <include file="scripts/013_create_table_marks.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/014_add_column_mark_id_table_car.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/015_create_table_car_body.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/016_insert_car_body.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/017_addCategories_and_car_body.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/018_alter_entities_to_engines.sql" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>
