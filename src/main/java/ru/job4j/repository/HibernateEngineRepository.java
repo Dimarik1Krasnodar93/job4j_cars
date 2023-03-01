@@ -19,4 +19,10 @@ public class HibernateEngineRepository implements EngineRepository {
     public List<Engine> findAll() {
         return crudRepository.query(FIND_ALL_ENGINES, Engine.class, new HashMap<>());
     }
+
+    @Override
+    public Engine save(Engine engine) {
+        crudRepository.run(session -> session.save(engine));
+        return engine;
+    }
 }

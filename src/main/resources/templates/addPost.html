@@ -34,11 +34,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
+                <a class="navbar-brand" href="#">Posts, <small th:text="${user.login}"></small></a>
                 <a class="nav-item nav-link" href="index">Главная</a>
-                <a class="nav-item nav-link" th:href="@{/posts}">Все задачи</a>
-                <a class="nav-item nav-link" th:href="@{/newTasks}">Новые задачи</a>
-                <a class="nav-item nav-link" th:href="@{/finishedTasks}">Завершенные задачи</a>
-                <a class="nav-item nav-link active" th:href="@{/doneTasks}">Добавить Задачу</a>
+                <a class="nav-item nav-link" th:href="@{/posts}">Объявления</a>
+                <a class="nav-item nav-link active" th:href="@{/formAddPost}">Добавить объявление</a>
             </div>
         </div>
     </nav>
@@ -52,19 +51,9 @@
             <form th:action="@{/createTask}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="0" />
                 <div class="form-group">
-                    <label for="text">Описание</label>
-                    <input type="text" class="form-control" name="text" id="text" />
+                    <label for="name">Наименование</label>
+                    <input type="text" class="form-control" name="name" id="name" />
                 </div>
-
-                <div class="form-group">
-                    <label for="category.id">Категории</label>
-                    <select class="form-control" id="category.id" name="category.id" multiple>
-                        <option th:each="category:${categories}" th:value="${category.id}"
-                                th:text="${category.name}" th:name="${category.id}">
-                        </option>
-                    </select>
-                </div>
-
                 <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
             </form>
         </div>

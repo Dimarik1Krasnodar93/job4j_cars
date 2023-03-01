@@ -16,7 +16,7 @@ public class Post {
     private int id;
     @Column
     private String text;
-    @Column
+    @Column (name = "created")
     private Timestamp timestamp;
 
     @ManyToOne
@@ -35,4 +35,7 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "car_id")
     private Car car;
+
+    @Column(name = "photo")
+    private byte[] photo;
 }

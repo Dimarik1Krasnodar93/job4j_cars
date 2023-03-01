@@ -19,4 +19,10 @@ public class HibernateCarRepository implements CarRepository {
     public List<Car> findAll() {
         return crudRepository.query(FIND_ALL_CARS, Car.class, new HashMap<>());
     }
+
+    @Override
+    public Car save(Car car) {
+        crudRepository.run(session -> session.save(car));
+        return car;
+    }
 }

@@ -15,9 +15,10 @@ public class PostService {
     PostRepository postRepository;
     private final CrudRepository crudRepository;
 
-    private static final String FIND_ALL_POSTS = "SELECT p from Post P";
+    private static final String FIND_ALL_POSTS = "SELECT p from Post p";
 
     public List<Post> getAllPosts() {
+
         return crudRepository.query(FIND_ALL_POSTS, Post.class, new HashMap<>());
     }
 }
