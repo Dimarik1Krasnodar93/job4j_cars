@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.job4j.repository.CrudRepository;
 import ru.job4j.repository.PostRepository;
-import ru.job4j.toOne.Post;
+import ru.job4j.toone.Post;
 
 import java.util.HashMap;
 import java.util.List;

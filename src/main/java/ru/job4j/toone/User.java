@@ -1,4 +1,4 @@
-package ru.job4j.toOne;
+package ru.job4j.toone;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

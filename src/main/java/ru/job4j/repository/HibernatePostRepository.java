@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import ru.job4j.cars.model.Mark;
-import ru.job4j.toOne.Post;
+import ru.job4j.toone.Post;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;

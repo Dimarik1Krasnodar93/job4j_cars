@@ -1,7 +1,7 @@
 package ru.job4j.repository;
 
 import ru.job4j.cars.model.Mark;
-import ru.job4j.toOne.Post;
+import ru.job4j.toone.Post;
 
 import java.util.List;
 

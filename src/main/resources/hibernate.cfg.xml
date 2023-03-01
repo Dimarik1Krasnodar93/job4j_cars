@@ -16,8 +16,8 @@
         <mapping class="ru.job4j.cars.model.Driver" />
         <mapping class="ru.job4j.cars.model.Engine" />
         <mapping class="ru.job4j.cars.model.Mark" />
-        <mapping class="ru.job4j.toOne.User" />
-        <mapping class="ru.job4j.toOne.Post" />
-        <mapping class="ru.job4j.toOne.PriceHistory" />
+        <mapping class="ru.job4j.toone.User" />
+        <mapping class="ru.job4j.toone.Post" />
+        <mapping class="ru.job4j.toone.PriceHistory" />
     </session-factory>
 </hibernate-configuration>

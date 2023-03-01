@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.job4j.service.UserService;
-import ru.job4j.toOne.User;
+import ru.job4j.toone.User;
 import ru.job4j.util.UserAdditional;
 
 import javax.servlet.http.HttpServletRequest;

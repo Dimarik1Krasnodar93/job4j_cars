@@ -1,6 +1,6 @@
 package ru.job4j.cars.model;
 
-import ru.job4j.toOne.User;
+import ru.job4j.toone.User;
 
 import javax.persistence.*;
 

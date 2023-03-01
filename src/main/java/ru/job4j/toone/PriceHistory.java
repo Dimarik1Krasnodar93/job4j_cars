@@ -1,4 +1,4 @@
-package ru.job4j.toOne;
+package ru.job4j.toone;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

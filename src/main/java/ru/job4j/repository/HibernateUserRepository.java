@@ -1,7 +1,7 @@
 package ru.job4j.repository;
 
 import org.springframework.stereotype.Repository;
-import ru.job4j.toOne.User;
+import ru.job4j.toone.User;
 
 import java.util.Map;
 import java.util.Optional;
