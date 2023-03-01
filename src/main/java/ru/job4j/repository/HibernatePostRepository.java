@@ -8,6 +8,7 @@ import ru.job4j.toone.Post;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +19,7 @@ public class HibernatePostRepository implements PostRepository {
     private final SessionFactory sessionFactory;
     private final CrudRepository crudRepository;
     private static final String FIND_ALL_POSTS = "SELECT p from Post P";
-    public static final String FIND_POSTS_LAST_DAY = "SELECT c FROM Car As c WHERE c.created > :dayStart";
+    public static final String FIND_POSTS_LAST_DAY = "SELECT c FROM Car As c WHERE c.created BETWEEN :dateTimeStart AND :dateTimeEnd";
     public static final String FIND_POSTS_WITH_PHOTO = "SELECT c FROM Car As c WHERE c.photo != NULL";
     public static final String FIND_POSTS_WITH_MARK = "SELECT c FROM Car As c c.mark_id = :mark_id";
 
@@ -26,9 +27,12 @@ public class HibernatePostRepository implements PostRepository {
 
     @Override
     public List<Post> getPostsForLastDay() {
+        LocalDateTime dateTimeEnd = LocalDateTime.now();
+        LocalDateTime dateTimeStart = dateTimeEnd.minusDays(1);
         Timestamp timestamp = Timestamp.valueOf(LocalDate.EPOCH.atStartOfDay());
         Map<String, Object> map = new HashMap<>();
-        map.put("dayStart", timestamp);
+        map.put("dateTimeStart", Timestamp.valueOf(dateTimeStart));
+        map.put("dateTimeEnd", Timestamp.valueOf(dateTimeEnd));
         return crudRepository.query(FIND_POSTS_LAST_DAY, Post.class, map);
     }
 
