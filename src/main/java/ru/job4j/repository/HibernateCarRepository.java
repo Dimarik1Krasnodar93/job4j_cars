@@ -13,7 +13,7 @@ import java.util.List;
 public class HibernateCarRepository implements CarRepository {
     private final SessionFactory sessionFactory;
     private final CrudRepository crudRepository;
-    public static final String FIND_ALL_CARS = "SELECT c FROM Car As C";
+    public static final String FIND_ALL_CARS = "SELECT c FROM Car As c";
 
     @Override
     public List<Car> findAll() {

@@ -51,4 +51,9 @@ public class HibernatePostRepository implements PostRepository {
     public List<Post> getAllPosts() {
         return crudRepository.query(FIND_ALL_POSTS, Post.class, new HashMap<>());
     }
+
+    @Override
+    public void save(Post post) {
+        crudRepository.run(session -> session.save(post));
+    }
 }

@@ -26,5 +26,9 @@
     <include file="scripts/017_addCategories_and_car_body.sql" relativeToChangelogFile="true"/>
     <include file="scripts/018_alter_entities_to_engines.sql" relativeToChangelogFile="true"/>
     <include file="scripts/019_rename_to_autopost.sql" relativeToChangelogFile="true"/>
-
+    <include file="scripts/020_insert_engines.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/021_insert_marks.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/022_deleteMarks_from_engines.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/023_insert_marks_2.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/024_insert_cars.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>

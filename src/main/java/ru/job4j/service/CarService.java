@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import ru.job4j.cars.model.Car;
 import ru.job4j.repository.CarRepository;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class CarService {
@@ -12,5 +14,9 @@ public class CarService {
 
     public void addCar(Car car) {
         carRepository.save(car);
+    }
+
+    public List<Car> findAllCars() {
+        return carRepository.findAll();
     }
 }

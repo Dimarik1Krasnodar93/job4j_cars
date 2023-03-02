@@ -21,4 +21,8 @@ public class PostService {
 
         return crudRepository.query(FIND_ALL_POSTS, Post.class, new HashMap<>());
     }
+
+    public void addPost(Post post) {
+        postRepository.save(post);
+    }
 }

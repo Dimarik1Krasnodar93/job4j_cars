@@ -10,4 +10,5 @@ public interface PostRepository {
     List<Post> getPostsWithPhoto();
     List<Post> getPostsByMark(Mark mark);
     List<Post> getAllPosts();
+    void save(Post post);
 }
