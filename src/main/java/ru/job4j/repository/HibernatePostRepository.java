@@ -29,7 +29,6 @@ public class HibernatePostRepository implements PostRepository {
     public List<Post> getPostsForLastDay() {
         LocalDateTime dateTimeEnd = LocalDateTime.now();
         LocalDateTime dateTimeStart = dateTimeEnd.minusDays(1);
-        Timestamp timestamp = Timestamp.valueOf(LocalDate.EPOCH.atStartOfDay());
         Map<String, Object> map = new HashMap<>();
         map.put("dateTimeStart", Timestamp.valueOf(dateTimeStart));
         map.put("dateTimeEnd", Timestamp.valueOf(dateTimeEnd));
