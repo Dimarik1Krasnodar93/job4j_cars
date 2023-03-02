@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "aoto_post")
+@Table(name = "auto_post")
 @Entity
 @Data
 public class Post {
