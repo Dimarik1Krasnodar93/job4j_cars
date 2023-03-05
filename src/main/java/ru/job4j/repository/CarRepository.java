@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface CarRepository {
     List<Car> findAll();
+    List<Car> findAllCarsWithAdditionalInfo();
     Car save(Car car);
 }

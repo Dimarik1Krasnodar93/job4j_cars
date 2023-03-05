@@ -1,21 +1,27 @@
 package ru.job4j.cars.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "cars")
+@Table(name = "car")
+@Data
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
+    @Column
+    private String name;
+
+    @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "engine_id")
     private Engine engine;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "mark_id")
     private Mark mark;
 

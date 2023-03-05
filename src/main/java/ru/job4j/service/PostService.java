@@ -6,6 +6,8 @@ import ru.job4j.repository.CrudRepository;
 import ru.job4j.repository.PostRepository;
 import ru.job4j.toone.Post;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,6 +25,7 @@ public class PostService {
     }
 
     public void addPost(Post post) {
+        post.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         postRepository.save(post);
     }
 }

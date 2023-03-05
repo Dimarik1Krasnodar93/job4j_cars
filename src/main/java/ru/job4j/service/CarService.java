@@ -19,4 +19,8 @@ public class CarService {
     public List<Car> findAllCars() {
         return carRepository.findAll();
     }
+
+    public List<Car> findAllCarsWithAdditionalInfo() {
+        return carRepository.findAllCarsWithAdditionalInfo();
+    }
 }

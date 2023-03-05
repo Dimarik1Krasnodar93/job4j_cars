@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -18,20 +18,19 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>All tasks</title>
+
+    <title>auto_ru - успешная регистрация!</title>
 </head>
 <body>
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-        <a class="navbar-brand" href="#">All posts</a>
+        <a class="navbar-brand" href="#">Dream Job, <small th:text="${user}"></small></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="navbar-brand" href="#">Posts, <small th:text="${user.login}"></small></a>
                 <a class="nav-item nav-link" href="index">Главная</a>
                 <a class="nav-item nav-link" th:href="@{/posts}">Объявления</a>
                 <a class="nav-item nav-link active" th:href="@{/formAddPost}">Добавить объявление</a>
@@ -46,30 +45,10 @@
             </div>
         </div>
     </nav>
-    <div class = "row">
-        <table class ="table">
-            <thread>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">text</th>
-                    <th scope="col">User</th>
-                </tr>
-            </thread>
-            <tbody>
-            <tr th:each="post: ${posts}">
-                <td>
-                    <span th:text="${post.id}"></span>
-                </td>
-                <td>
-                    <a th:href="@{|/post/${post.id}|}">
-                        <i class="fa fa-edit"></i>
-                        <span th:text="${post.text}"></span>
-                    </a>
-                </td>
-                <td th:text="${post.user}"></td>
-            </tr>
-            </tbody>
-        </table>
+    <div>
+        <h2>
+            Success!
+        </h2>
     </div>
 </div>
 </body>

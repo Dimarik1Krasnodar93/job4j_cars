@@ -17,4 +17,11 @@ public class IndexController {
         model.addAttribute("user", user);
         return "index";
     }
+
+    @GetMapping("/")
+    public String getMain(Model model, HttpSession httpSession) {
+        User user = UserAdditional.getFromHttpSession(httpSession);
+        model.addAttribute("user", user);
+        return "index";
+    }
 }
