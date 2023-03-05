@@ -20,14 +20,14 @@ public class User {
     @Column
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "auto_user")
-    private List<Post> posts = new ArrayList<>();;
-
-    @ManyToMany
-    @JoinTable(name = "participates",
-            joinColumns = {@JoinColumn(name = "user_id")})
-    private List<User> userList = new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "auto_user")
+//    private List<Post> posts = new ArrayList<>();;
+//
+//    @ManyToMany
+//    @JoinTable(name = "participates",
+//            joinColumns = {@JoinColumn(name = "user_id")})
+//    private List<User> userList = new ArrayList<>();
 
     public User(String login, String password) {
         this.login = login;
