@@ -10,22 +10,30 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @AllArgsConstructor
 public class PostService {
-    PostRepository postRepository;
+    private PostRepository postRepository;
     private final CrudRepository crudRepository;
 
-    private static final String FIND_ALL_POSTS = "SELECT p from Post p";
 
     public List<Post> getAllPosts() {
 
-        return crudRepository.query(FIND_ALL_POSTS, Post.class, new HashMap<>());
+        return postRepository.getAllPosts();
+    }
+
+    public void update(Post post) {
+        postRepository.update(post);
+    }
+
+    public Post findById(int id) {
+        return postRepository.findById(id);
     }
 
     public void addPost(Post post) {
-        post.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
+        post.setCreated(Timestamp.valueOf(LocalDateTime.now()));
         postRepository.save(post);
     }
 }

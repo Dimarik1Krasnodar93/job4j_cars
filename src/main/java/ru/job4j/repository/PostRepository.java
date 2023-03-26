@@ -11,4 +11,6 @@ public interface PostRepository {
     List<Post> getPostsByMark(Mark mark);
     List<Post> getAllPosts();
     void save(Post post);
+    void update(Post post);
+    Post findById(int id);
 }

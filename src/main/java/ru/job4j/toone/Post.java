@@ -13,11 +13,12 @@ import java.util.List;
 @Data
 public class Post {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
     private String text;
     @Column (name = "created")
-    private Timestamp timestamp;
+    private Timestamp created;
 
     @ManyToOne
     @JoinColumn(name = "auto_user_id")
@@ -38,4 +39,15 @@ public class Post {
 
     @Column(name = "photo")
     private byte[] photo;
+
+    @Column
+    private boolean saled;
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                '}';
+    }
 }

@@ -18,12 +18,11 @@ import java.util.Map;
 public class HibernatePostRepository implements PostRepository {
     private final SessionFactory sessionFactory;
     private final CrudRepository crudRepository;
-    private static final String FIND_ALL_POSTS = "SELECT p from Post P";
     public static final String FIND_POSTS_LAST_DAY = "SELECT c FROM Car As c WHERE c.created BETWEEN :dateTimeStart AND :dateTimeEnd";
     public static final String FIND_POSTS_WITH_PHOTO = "SELECT c FROM Car As c WHERE c.photo != NULL";
     public static final String FIND_POSTS_WITH_MARK = "SELECT c FROM Car As c c.mark_id = :mark_id";
-
-
+    private static final String FIND_ALL_POSTS = "SELECT p from Post p";
+    private static final String FIND_POST_BY_ID = "SELECT p from Post p WHERE p.id = :id";
 
     @Override
     public List<Post> getPostsForLastDay() {
@@ -33,6 +32,13 @@ public class HibernatePostRepository implements PostRepository {
         map.put("dateTimeStart", Timestamp.valueOf(dateTimeStart));
         map.put("dateTimeEnd", Timestamp.valueOf(dateTimeEnd));
         return crudRepository.query(FIND_POSTS_LAST_DAY, Post.class, map);
+    }
+
+    @Override
+    public Post findById(int id) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", id);
+        return crudRepository.query(FIND_POST_BY_ID, Post.class, map).get(0);
     }
 
     @Override
@@ -55,5 +61,10 @@ public class HibernatePostRepository implements PostRepository {
     @Override
     public void save(Post post) {
         crudRepository.run(session -> session.save(post));
+    }
+
+    @Override
+    public void update(Post post) {
+        crudRepository.run(session -> session.update(post));
     }
 }
