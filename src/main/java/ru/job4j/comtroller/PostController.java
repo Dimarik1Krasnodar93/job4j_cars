@@ -82,8 +82,6 @@ public class PostController {
 //        if (!user.equals(post.getUser())) {
 //            return "fail";
 //        }
-        post = new Post();
-        post.setId(7);
         postService.update(post);
         return "redirect:/posts";
     }
