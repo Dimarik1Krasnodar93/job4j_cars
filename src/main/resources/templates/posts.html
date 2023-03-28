@@ -53,6 +53,11 @@
                     <th scope="col">#</th>
                     <th scope="col">text</th>
                     <th scope="col">User</th>
+                    <th scope="col">Car</th>
+                    <th scope="col">Engine</th>
+                    <th scope="col">Mark</th>
+                    <th scope="col">Body</th>
+                    <th scope="col">Продано</th>
                 </tr>
             </thread>
             <tbody>
@@ -67,6 +72,11 @@
                     </a>
                 </td>
                 <td th:text="${post.user}"></td>
+                <td th:text="${post.car}"></td>
+                <td th:text="${post.car.engine}"></td>
+                <td th:text="${post.car.mark}"></td>
+                <td th:text="${post.car.body}"></td>
+                <td th:text="${post.saled}"></td>
             </tr>
             </tbody>
         </table>

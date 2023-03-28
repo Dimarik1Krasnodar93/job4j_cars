@@ -15,4 +15,9 @@ public class Engine {
     private int id;
     @Column
     private String name;
+
+    @Override
+    public String toString() {
+        return "Engine{" + "id=" + id + ", name='" + name + '\'' + '}';
+    }
 }

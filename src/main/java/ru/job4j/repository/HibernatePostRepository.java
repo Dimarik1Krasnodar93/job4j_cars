@@ -21,7 +21,8 @@ public class HibernatePostRepository implements PostRepository {
     public static final String FIND_POSTS_LAST_DAY = "SELECT c FROM Car As c WHERE c.created BETWEEN :dateTimeStart AND :dateTimeEnd";
     public static final String FIND_POSTS_WITH_PHOTO = "SELECT c FROM Car As c WHERE c.photo != NULL";
     public static final String FIND_POSTS_WITH_MARK = "SELECT c FROM Car As c c.mark_id = :mark_id";
-    private static final String FIND_ALL_POSTS = "SELECT p from Post p";
+    private static final String FIND_ALL_POSTS = "SELECT p from Post p JOIN FETCH p.car c "
+            + "JOIN FETCH c.engine JOIN FETCH c.mark JOIN FETCH c.body";
     private static final String FIND_POST_BY_ID = "SELECT p from Post p WHERE p.id = :id";
 
     @Override
@@ -55,6 +56,7 @@ public class HibernatePostRepository implements PostRepository {
 
     @Override
     public List<Post> getAllPosts() {
+
         return crudRepository.query(FIND_ALL_POSTS, Post.class, new HashMap<>());
     }
 

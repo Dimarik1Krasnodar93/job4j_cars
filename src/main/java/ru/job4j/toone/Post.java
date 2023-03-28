@@ -29,11 +29,7 @@ public class Post {
     joinColumns = {@JoinColumn(name = "post_id")})
     private List<User> userList = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "post_id")
-    private List<PriceHistory> priceHistoryList = new ArrayList<>();
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "car_id")
     private Car car;
 
@@ -45,9 +41,6 @@ public class Post {
 
     @Override
     public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", text='" + text + '\'' +
-                '}';
+        return "Post{" + "id=" + id + ", text='" + text + '\'' + '}';
     }
 }

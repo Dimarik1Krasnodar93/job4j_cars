@@ -79,9 +79,9 @@ public class PostController {
     public String setSaled(Model model, @ModelAttribute Post post, HttpSession httpSession) {
         post.setSaled(true);
         User user = UserAdditional.getFromHttpSession(httpSession);
-//        if (!user.equals(post.getUser())) {
-//            return "fail";
-//        }
+        if (!user.equals(post.getUser())) {
+            return "fail";
+        }
         postService.update(post);
         return "redirect:/posts";
     }

@@ -15,7 +15,7 @@ public class HibernateCarRepository implements CarRepository {
     private final CrudRepository crudRepository;
     public static final String FIND_ALL_CARS = "SELECT c FROM Car As c";
 
-    public static final String FIND_ALL_CARS_WITH_ADDITIONAL = "SELECT c FROM Car As c JOIN FETCH c.engine_id ";
+    public static final String FIND_ALL_CARS_WITH_ADDITIONAL = "SELECT c FROM Car As c JOIN FETCH c.engine_id";
 
     @Override
     public List<Car> findAll() {
