@@ -1,4 +1,4 @@
-package ru.job4j.comtroller;
+package ru.job4j.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +33,8 @@ public class UserController {
     public String registration(Model model, @ModelAttribute User user) {
         Optional<User> regUser = userService.add(user);
         if (!regUser.isEmpty()) {
-            model.addAttribute("message", "Пользователь с таким именем почтой уже существует");
+            model.addAttribute("message",
+                    "Пользователь с таким именем почтой уже существует");
             return "/fail";
         }
         return "/success";
@@ -50,7 +51,8 @@ public class UserController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute User user, HttpServletRequest req) {
-        Optional<User> userDb = userService.findUserByLoginAndPassword(user.getLogin(), user.getPassword());
+        Optional<User> userDb = userService.findUserByLoginAndPassword(user.getLogin(),
+                user.getPassword());
         if (userDb.isEmpty()) {
             return "redirect:/loginPage?fail=true";
         }

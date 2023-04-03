@@ -12,8 +12,6 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 public class HibernateDriverRepository implements DriverRepository {
-
-    private final SessionFactory sessionFactory;
     private final CrudRepository crudRepository;
     public static final String FIND_ALL_DRIVERS = "SELECT d FROM Driver As d";
 

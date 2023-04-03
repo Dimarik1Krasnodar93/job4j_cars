@@ -1,0 +1,1 @@
+ALTER TABLE auto_post rename column saled to sale;

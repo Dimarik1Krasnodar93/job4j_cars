@@ -11,12 +11,12 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 public class HibernateEngineRepository implements EngineRepository {
-    private final SessionFactory sessionFactory;
     private final CrudRepository crudRepository;
     public static final String FIND_ALL_ENGINES = "SELECT e FROM Engine As e";
 
     @Override
     public List<Engine> findAll() {
+
         return crudRepository.query(FIND_ALL_ENGINES, Engine.class, new HashMap<>());
     }
 

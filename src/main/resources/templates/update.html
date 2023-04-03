@@ -76,8 +76,8 @@
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
             </form>
-            <span th:if="${!post.saled}">
-                <form th:action="@{/setSaled}" method="post" th:object="${post}">
+            <span th:if="${!post.sale}">
+                <form th:action="@{/setSale}" method="post" th:object="${post}">
                     <input type="hidden" name="id" th:field="*{id}"/>
                     <input type="hidden" name="text" th:field="*{text}"/>
                     <input type="hidden" name="created" th:field="*{created}">

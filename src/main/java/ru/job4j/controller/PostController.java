@@ -1,4 +1,4 @@
-package ru.job4j.comtroller;
+package ru.job4j.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.core.io.ByteArrayResource;
@@ -75,9 +75,9 @@ public class PostController {
         return "posts";
     }
 
-    @PostMapping("/setSaled")
-    public String setSaled(Model model, @ModelAttribute Post post, HttpSession httpSession) {
-        post.setSaled(true);
+    @PostMapping("/setSale")
+    public String setSale(Model model, @ModelAttribute Post post, HttpSession httpSession) {
+        post.setSale(true);
         User user = UserAdditional.getFromHttpSession(httpSession);
         if (!user.equals(post.getUser())) {
             return "fail";
@@ -88,7 +88,7 @@ public class PostController {
 
     @PostMapping("/updatePost")
     public String updatePost(Model model, @ModelAttribute Post post, HttpSession httpSession) {
-        post.setSaled(true);
+        post.setSale(true);
         postService.update(post);
         return "redirect:/posts";
     }

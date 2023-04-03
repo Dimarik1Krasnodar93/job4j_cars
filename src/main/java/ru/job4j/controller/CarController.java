@@ -1,4 +1,4 @@
-package ru.job4j.comtroller;
+package ru.job4j.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.job4j.cars.model.Car;
-import ru.job4j.repository.CarRepository;
 import ru.job4j.service.CarService;
 import ru.job4j.toone.User;
 import ru.job4j.util.UserAdditional;

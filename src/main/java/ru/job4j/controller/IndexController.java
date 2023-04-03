@@ -1,4 +1,4 @@
-package ru.job4j.comtroller;
+package ru.job4j.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

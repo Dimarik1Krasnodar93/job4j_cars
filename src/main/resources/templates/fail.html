@@ -34,14 +34,6 @@
                 <a class="nav-item nav-link" href="index">Главная</a>
                 <a class="nav-item nav-link" th:href="@{/posts}">Объявления</a>
                 <a class="nav-item nav-link active" th:href="@{/formAddPost}">Добавить объявление</a>
-                <a class="nav-item nav-link" th:if="${user.login == 'Гость'}" th:href="@{/loginPage}">
-                    <span th:text="${user.login}"></span>
-                    <span> | Войти</span>
-                </a>
-                <a class="nav-item nav-link" th:if="${user.login != 'Гость'}" th:href="@{/logout}">
-                    <span th:text="${user.login}"></span>
-                    <span> | Выйти</span>
-                </a>
             </div>
         </div>
     </nav>

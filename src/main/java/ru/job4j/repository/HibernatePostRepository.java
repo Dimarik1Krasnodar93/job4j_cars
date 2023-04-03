@@ -16,9 +16,9 @@ import java.util.Map;
 @Repository
 @AllArgsConstructor
 public class HibernatePostRepository implements PostRepository {
-    private final SessionFactory sessionFactory;
     private final CrudRepository crudRepository;
-    public static final String FIND_POSTS_LAST_DAY = "SELECT c FROM Car As c WHERE c.created BETWEEN :dateTimeStart AND :dateTimeEnd";
+    public static final String FIND_POSTS_LAST_DAY = "SELECT c FROM Car As c "
+            + "WHERE c.created BETWEEN :dateTimeStart AND :dateTimeEnd";
     public static final String FIND_POSTS_WITH_PHOTO = "SELECT c FROM Car As c WHERE c.photo != NULL";
     public static final String FIND_POSTS_WITH_MARK = "SELECT c FROM Car As c c.mark_id = :mark_id";
     private static final String FIND_ALL_POSTS = "SELECT p from Post p JOIN FETCH p.car c "

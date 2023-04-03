@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 public class HibernateCarRepository implements CarRepository {
-    private final SessionFactory sessionFactory;
     private final CrudRepository crudRepository;
     public static final String FIND_ALL_CARS = "SELECT c FROM Car As c";
 

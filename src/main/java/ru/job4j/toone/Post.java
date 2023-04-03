@@ -37,7 +37,7 @@ public class Post {
     private byte[] photo;
 
     @Column
-    private boolean saled;
+    private boolean sale;
 
     @Override
     public String toString() {
